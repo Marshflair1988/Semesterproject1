@@ -1,0 +1,145 @@
+/*
+  Community Science Museum – Responsive layout
+  Tablet and mobile breakpoints
+*/
+
+/* Tablet */
+@media (max-width: 900px) {
+  :root {
+    --text-hero: 2.75rem;
+    --text-3xl: 2rem;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .page-header h1 {
+    font-size: var(--text-2xl);
+  }
+
+  .page-lead {
+    font-size: var(--text-base);
+  }
+}
+
+/* Mobile: collapsible navigation */
+@media (max-width: 700px) {
+  :root {
+    --text-hero: 2.25rem;
+    --text-2xl: 1.75rem;
+    --text-3xl: 1.75rem;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-white);
+    border-bottom: 2px solid var(--color-light-grey);
+    padding: var(--space-md);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: visibility 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .main-nav.is-open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav-list li {
+    border-bottom: 1px solid var(--color-light-grey);
+  }
+
+  .nav-list li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-link {
+    display: block;
+    padding: var(--space-md);
+  }
+
+  /* Hamburger to X (optional, enhanced by JS) */
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .hero {
+    padding: var(--space-2xl) var(--container-padding);
+  }
+
+  .hero-tagline {
+    font-size: var(--text-lg);
+  }
+
+  .section {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: var(--space-lg);
+  }
+
+  .exhibition-card,
+  .event-card {
+    padding: var(--space-lg);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  .section-with-image {
+    grid-template-columns: 1fr;
+  }
+
+  .section-with-image--reverse .section-image,
+  .section-with-image--reverse > div {
+    order: unset;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 400px) {
+  :root {
+    --container-padding: var(--space-md);
+    --text-hero: 2rem;
+  }
+
+  .logo {
+    font-size: var(--text-base);
+  }
+}
